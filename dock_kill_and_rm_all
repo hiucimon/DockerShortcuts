@@ -1,5 +1,4 @@
 #!/bin/bash
-temp=$(docker ps|awk '{print $(NF-0)}'|tail +2)
 for image in $( docker ps|awk '{print $(NF-0)}'|tail +2 ); do
   docker stop $image
   docker rm $image
