@@ -1,5 +1,5 @@
 #!/bin/bash
-for image in $( docker ps|awk '{print $(NF-0)}'|tail +2 ); do
+for image in $( docker ps -a|awk '{print $(NF-0)}'|tail +2 ); do
   docker stop $image
   docker rm $image
 done
